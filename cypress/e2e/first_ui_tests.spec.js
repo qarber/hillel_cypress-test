@@ -2,9 +2,7 @@
 
 
 describe('First UI tests of our project', () => {
-    // beforeEach(()=> {
-        
-    // })
+ 
     it('change each color shema in row and check background-color', () => {
 
         const colors = {
