@@ -12,8 +12,10 @@ describe ('Date Picker tests', () => {
         
         datePickerPage.open()
         datePickerPage.elements.dateInput().click()
-        cy.get('nb-base-calendar [class="ng-star-inserted"]').should('be.visible')
-        cy.get('nb-calendar-day-cell.today').click()
+        // cy.get('nb-base-calendar [class="ng-star-inserted"]').should('be.visible')
+        // cy.get('nb-calendar-day-cell.today').click()
+        datePickerPage.elements.calendar().should('be.visible')
+        datePickerPage.elements.dayToday().click()
         datePickerPage.elements.dateInput().should('have.value', dateToday)
            
 

@@ -20,12 +20,10 @@ describe ('Register tests', () => {
     })
 
 
-    it('Successful Register with valid data', () => {
+    it.only('Successful Register with valid data', () => {
         registerPage.open()
-        registerPage.register('Roman', 'qarom@test.mail', 'qatestpass', 'qatestpass')
+        registerPage.register(Cypress.env('username'), Cypress.env('email'), Cypress.env('password'), Cypress.env('password'))
         cy.get('div[class="user-picture image ng-star-inserted"]').should('be.visible')
-
-
     })
 
 

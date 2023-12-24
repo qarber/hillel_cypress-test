@@ -7,7 +7,6 @@ describe ('Forgot Password tests', () => {
 
     it('Email Input length validation error message visability', () => {
         cy.visit('/auth/request-password')
-        // forgotPassword.open()
         forgotPassword.elements.emailInput().type('qa@$%')
         forgotPassword.elements.forgotPasswordTitle().click()
         cy.contains('[class="caption status-danger"]', 'Email should be the real one!').should('be.visible')
@@ -17,7 +16,6 @@ describe ('Forgot Password tests', () => {
 
     it('Email Input required validation error message visability', () => {
         cy.visit('/auth/request-password')
-        // forgotPassword.open()
         forgotPassword.elements.emailInput().click()
         forgotPassword.elements.forgotPasswordTitle().click()
         cy.contains('[class="caption status-danger"]', 'Email is required!').should('be.visible')
@@ -28,7 +26,6 @@ describe ('Forgot Password tests', () => {
 
     it('Back to Login button route is correct', () => {
         cy.visit('/auth/request-password')
-        // forgotPassword.open()
         forgotPassword.elements.backToLoginButton().click()
         cy.get('nb-login [id="title"]').should('be.visible')
 
@@ -37,7 +34,6 @@ describe ('Forgot Password tests', () => {
 
     it('Register button route is correct', () => {
         cy.visit('/auth/request-password')
-        // forgotPassword.open()
         forgotPassword.elements.registerButton().click()
         cy.get('nb-register [id="title"]').should('be.visible')
 

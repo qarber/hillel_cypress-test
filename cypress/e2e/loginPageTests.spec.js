@@ -27,12 +27,10 @@ describe ('Login tests', () => {
     })
 
 
-    it('Successful Login with valid data', () => {
+    it.only('Successful Login with valid data', () => {
         loginPage.open()
-        loginPage.login('q555arom@test.mail','qatestpass')
+        loginPage.login(Cypress.env('email'), Cypress.env('password'))
         cy.get('div[class="user-picture image ng-star-inserted"]').should('be.visible')
-
-
     })
 
 
