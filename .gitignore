@@ -47,3 +47,5 @@ Thumbs.db
 /cypress/videos/
 /cypress/screenshots/
 mochawesome.json
+
+cypress.env.json
