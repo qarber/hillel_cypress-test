@@ -5,8 +5,6 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - ".github/workflows/*"
   pull_request:
     types: [opened, edited, reopened]
 
@@ -20,3 +18,12 @@ jobs:
         run: npm i --force
       - name: Run server and test
         run: npm run cy:run:server
+      - name: Create report
+        if: success() || failure()
+        run: npm run report:all
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+            name: test-report
+            path: mochawesome-report/
