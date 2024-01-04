@@ -19,4 +19,4 @@ jobs:
       - name: Install dependencies
         run: npm i --force
       - name: Run server and test
-        run: cy:run:server
+        run: npm run cy:run:server
